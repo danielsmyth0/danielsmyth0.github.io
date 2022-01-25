@@ -1,0 +1,72 @@
+import random
+
+#0 set up variables in 0-99 coordinate
+y0 = random.randint(0,99)
+x0 = random.randint(0,99)
+
+#0 random move one step y
+if random.random() < 0.5:
+    y0 += 1
+else:
+    y0 -= 1
+
+#0 random move one step x
+if random.random() < 0.5:
+    x0 += 1
+else:
+    x0 -= 1
+
+#1 random move one step y
+if random.random() < 0.5:
+    y0 += 1
+else:
+    y0 -= 1
+
+#1 random move one step x
+if random.random() < 0.5:
+    x0 += 1
+else:
+    x0 -= 1
+
+
+
+#1 set up variables in 0-99 coordinate
+y1 = random.randint(0,99)
+x1 = random.randint(0,99)
+
+#0 random move one step y
+if random.random() < 0.5:
+    y1 += 1
+else:
+    y1 -= 1
+
+#0 random move one step x
+if random.random() < 0.5:
+    x1 += 1
+else:
+    x1 -= 1
+
+#1 random move one step y
+if random.random() < 0.5:
+    y1 += 1
+else:
+    y1 -= 1
+
+#1 random move one step x
+if random.random() < 0.5:
+    x1 += 1
+else:
+    x1 -= 1
+    
+#calculate distance between points
+#ydiff = (y0 - y1)
+#ydiff_square = ydiff * ydiff
+#xdiff = (x0 - x1)
+#xdiff_square = xdiff * xdiff
+#sumyx = ydiff_square + xdiff_square
+#answer2 = sumyx ** 0.5
+#print (answer2)
+    
+answer = (((y0-y1)**2)+((x0-x1)**2))**0.5
+print (answer)
+
