@@ -1,0 +1,92 @@
+import random
+import operator
+import matplotlib.pyplot
+
+
+#0 set up variables in 0-99 coordinate
+random.seed(1)
+agents = []
+agents.append([random.randint(0,99),random.randint(0,99)])
+
+
+
+#0 random move one step y
+if random.random() < 0.5:
+    agents[0][0] += 1
+else:
+    agents[0][0] -= 1
+
+#0 random move one step x
+if random.random() < 0.5:
+    agents[0][1] += 1
+else:
+    agents[0][1] -= 1
+
+#1 random move one step y
+if random.random() < 0.5:
+    agents[0][0] += 1
+else:
+    agents[0][0] -= 1
+
+#1 random move one step x
+if random.random() < 0.5:
+    agents[0][1] += 1
+else:
+    agents[0][1] -= 1
+
+
+
+#1 set up variables in 0-99 coordinate
+agents.append([random.randint(0,99),random.randint(0,99)])
+
+#0 random move one step y
+if random.random() < 0.5:
+    agents[1][1] += 1
+else:
+    agents[1][1] -= 1
+
+#0 random move one step x
+if random.random() < 0.5:
+    agents[1][0] += 1
+else:
+    agents[1][0] -= 1
+
+#1 random move one step y
+if random.random() < 0.5:
+    agents[1][1] += 1
+else:
+    agents[1][1] -= 1
+
+#1 random move one step x
+if random.random() < 0.5:
+    agents[1][0] += 1
+else:
+    agents[1][0] -= 1
+    
+#calculate distance between points
+#diff = (agents[0][0] - agents[1][1])
+#diff_square = ydiff * ydiff
+#diff = (agents[0][1] - agents[1][0])
+#diff_square = xdiff * xdiff
+#umyx = ydiff_square + xdiff_square
+#nswer2 = sumyx ** 0.5
+#rint (answer2)
+    
+answer = (((agents[0][0]-agents[1][0])**2)+((agents[0][1]-agents[1][1])**2))**0.5
+print (answer)
+print(max(agents, key=operator.itemgetter(1)))
+
+
+
+matplotlib.pyplot.ylim(0, 99)
+matplotlib.pyplot.xlim(0, 99)
+matplotlib.pyplot.scatter(agents[0][1],agents[0][0])
+matplotlib.pyplot.scatter(agents[1][1],agents[1][0])
+cm = (max(agents, key=operator.itemgetter(1)))
+matplotlib.pyplot.scatter(cm[1],cm[0], color='red')
+matplotlib.pyplot.show()
+
+#y0= agents[0][0]
+#x0= agents[0][1]
+#y1= agents[1][0]
+#x1= agents[1][1]
