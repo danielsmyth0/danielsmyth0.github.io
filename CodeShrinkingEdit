@@ -4,16 +4,16 @@ import matplotlib.pyplot
 
 
 #0 set up variables in 0-99 coordinate
-random.seed(2)
+#random.seed(2)
 agents = []
 
 #agent number control
 num_of_agents = 10
 for i in range(num_of_agents):
     agents.append([random.randint(0,99),random.randint(0,99)])
-print (agents)
-#agents.append([random.randint(0,99),random.randint(0,99)])
     
+ 
+#loop to move each coordinate set number of times based on num_of_agents value
 for i in range(num_of_agents):
     if random.random() < 0.5:
         agents[i][0] += 1
@@ -27,19 +27,14 @@ for i in range(num_of_agents):
         agents[i][1] -= 1    
         
 
+#plot agents all black
 matplotlib.pyplot.ylim(0, 99)
 matplotlib.pyplot.xlim(0, 99)
 for i in range(num_of_agents):
     print (agents[i][0],agents[i][1])
     matplotlib.pyplot.scatter(agents[i][1],agents[i][0], color='black')
 
-
-
-#matplotlib.pyplot.scatter(agents[0][1],agents[0][0])
-#matplotlib.pyplot.scatter(agents[1][1],agents[1][0])
-
-
-#print(max(agents, key=operator.itemgetter(1)))
+#colour Min/Max on X/Y Coord specific colours
 miny = (min(agents, key=operator.itemgetter(0)))
 matplotlib.pyplot.scatter(miny[1],miny[0], color='blue')
 maxy = (max(agents, key=operator.itemgetter(0)))
