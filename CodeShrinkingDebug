@@ -8,7 +8,7 @@ random.seed(2)
 agents = []
 
 #agent number control
-num_of_agents = 5
+num_of_agents = 10
 for i in range(num_of_agents):
     agents.append([random.randint(0,99),random.randint(0,99)])
 print (agents)
@@ -31,7 +31,7 @@ matplotlib.pyplot.ylim(0, 99)
 matplotlib.pyplot.xlim(0, 99)
 for i in range(num_of_agents):
     print (agents[i][0],agents[i][1])
-    matplotlib.pyplot.scatter(agents[i][0],agents[i][1])
+    matplotlib.pyplot.scatter(agents[i][1],agents[i][0])
 
 
 
@@ -42,8 +42,9 @@ for i in range(num_of_agents):
 #print(max(agents, key=operator.itemgetter(1)))
     
 cm = (max(agents, key=operator.itemgetter(1)))
-matplotlib.pyplot.scatter(cm[1],cm[0], color='')
+matplotlib.pyplot.scatter(cm[1],cm[0], color='black')
 matplotlib.pyplot.show()
     
+
 
 
